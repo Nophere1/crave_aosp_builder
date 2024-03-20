@@ -35,11 +35,11 @@ on:
       LOCAL_MANIFEST_BRANCH:
         description: "Personal local manifest's branch:"
         required: false
-        default: 'lineage-oxygen'
+        default: 'apollo-RMX1805'
       DEVICE_NAME:
         description: "Device's codename:"
         required: true
-        default: "oxygen"
+        default: "RMX1805"
       PRODUCT_NAME:
         description: "Product to build:"
         required: true
@@ -169,7 +169,7 @@ jobs:
                     repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs --depth=1
                   ;;
                   "CipherOS 14")
-                    repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1
+                    repo init -u https://github.com/ApolloOS/manifest.git -b 13 --depth=1
                   ;;
               esac
              else
@@ -223,8 +223,8 @@ jobs:
             export BUILD_DIFFERENT_ROM="repo init -u https://github.com/accupara/los20.git -b lineage-20.0 --git-lfs --depth=1"
           ;;
           "CipherOS 14")
-            repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1
-            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen --git-lfs --depth=1"
+            repo init -u https://github.com/ApolloOS/manifest.git -b 13 --depth=1
+            export BUILD_DIFFERENT_ROM="repo init -u https://github.com/ApolloOS/manifest.git -b 13 --depth=1"
           ;;
         esac
         if [ "${{ github.event.inputs.BUILD_DIFFERENT_ROM }}" == "echo 'Build Starting!'" ]; then
